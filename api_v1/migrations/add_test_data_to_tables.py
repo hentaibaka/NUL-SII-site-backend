@@ -35,7 +35,7 @@ def add_projects(apps, schema_editor):
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=True, 
                  type=0, 
-                 slug='tipa_slug')
+                 slug='tipa_slug1')
     p1.save()
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
@@ -43,7 +43,7 @@ def add_projects(apps, schema_editor):
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=True, 
                  type=1, 
-                 slug='tipa_slug')
+                 slug='tipa_slug2')
     p1.save()
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
@@ -51,7 +51,7 @@ def add_projects(apps, schema_editor):
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=True, 
                  type=0, 
-                 slug='tipa_slug')
+                 slug='tipa_slug3')
     p1.save()
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
@@ -59,7 +59,7 @@ def add_projects(apps, schema_editor):
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=True, 
                  type=1, 
-                 slug='tipa_slug')
+                 slug='tipa_slug4')
     p1.save()
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
@@ -67,7 +67,7 @@ def add_projects(apps, schema_editor):
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=True, 
                  type=0, 
-                 slug='tipa_slug')
+                 slug='tipa_slug5')
     p1.save()
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
@@ -75,7 +75,7 @@ def add_projects(apps, schema_editor):
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=False, 
                  type=1, 
-                 slug='tipa_slug')
+                 slug='tipa_slug6')
     p1.save()
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
@@ -83,7 +83,7 @@ def add_projects(apps, schema_editor):
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=False, 
                  type=0, 
-                 slug='tipa_slug')
+                 slug='tipa_slug7')
     p1.save()
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
@@ -91,7 +91,7 @@ def add_projects(apps, schema_editor):
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=False, 
                  type=1, 
-                 slug='tipa_slug')
+                 slug='tipa_slug8')
     p1.save()
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
@@ -99,7 +99,7 @@ def add_projects(apps, schema_editor):
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=False, 
                  type=0, 
-                 slug='tipa_slug')
+                 slug='tipa_slug9')
     p1.save()
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
@@ -107,7 +107,7 @@ def add_projects(apps, schema_editor):
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=False, 
                  type=1, 
-                 slug='tipa_slug')
+                 slug='tipa_slug10')
     p1.save()
 
 def add_publications(apps, schema_editor):
