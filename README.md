@@ -6,7 +6,7 @@
 1. Установить виртуальное окружение
 > Powershell:
 > ```powershell
-> python -3.10 -m venv venv
+> py -3.10 -m venv venv
 > ```
 
 > Bash:
@@ -26,7 +26,7 @@
 3. Обновить pip
 > Powershell:
 > ```powershell
-> python -3.10 -m pip install --upgrade pip
+> python -m pip install --upgrade pip
 > ```
 
 > Bash:
@@ -34,12 +34,42 @@
 > -
 > ```
 4. Установить библиотеки
- > Powershell:
+> Powershell:
 > ```powershell
 > pip install -r requirements.txt
 > ```
 
 > Bash:
 > ```bash
+> -
+> ```
+5. Сделать миграции
+> Powershell:
+> ```
+> python manage.py migrate
+> ```
+
+> Bash:
+> ```
+> -
+> ```
+6. Создать суперпользователя
+> Powershell:
+> ```
+> python manage.py createsuperuser
+> ```
+
+> Bash:
+> ```
+> -
+> ```
+7. Запустить тестовый сервер:
+>Powershell:
+>```
+>python manage.py runserver
+>```
+
+> Bash:
+> ```
 > -
 > ```
