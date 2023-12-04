@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import *
  
- 
+
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
@@ -21,3 +21,10 @@ class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
         fields = ('name', 'email', 'question')
+
+class PortfoloSerializer(serializers.ModelSerializer):
+    authors = EmployeeSerializer(read_only=True, many=True)
+    class Meta:
+        model = Project
+        fields = ('photo', 'title', 'authors', 'description', 'instruction', 'is_realized', 'type', 'slug')
+ 

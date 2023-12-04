@@ -1,29 +1,6 @@
 from django.db import models
 from .utils import handle_project_photo, handle_employee_photo
 
-class Project(models.Model):
-    class StatusChoices(models.IntegerChoices):
-        REALIZED = (0, 'Реализовано')
-        IN_PROGRESS = (1, 'разрабатывается')
-    
-    class TypeChoices(models.IntegerChoices):
-        PHOTO = (0, 'Фото')
-        VIDEO = (1, 'Видео')
-
-    photo = models.ImageField(upload_to=handle_project_photo, verbose_name='Фото')
-    title = models.CharField(max_length=256, blank=False, null=False, verbose_name='Название')
-    description = models.CharField(max_length=256, blank=False, null=False, verbose_name='Описание')
-    is_realized = models.BooleanField(choices=tuple(map(lambda x: (bool(x[0]), x[1]), StatusChoices.choices)), 
-                                 default=StatusChoices.REALIZED, verbose_name='Статус')
-    type = models.IntegerField(choices=TypeChoices.choices, blank=False, null=False, verbose_name='Тип')
-    slug = models.SlugField(unique=True, max_length=256, blank=True, null=True, verbose_name='Slug')
-    
-    class Meta():
-        verbose_name_plural = 'Проекты'
-        verbose_name = 'Проект'
-
-    def __str__(self) -> str:
-        return self.title
 
 class Publication(models.Model):
     title = models.CharField(max_length=256, blank=False, null=False, verbose_name='Название')
@@ -65,3 +42,29 @@ class Contact(models.Model):
 
     def __str__(self) -> str:
         return self.email
+
+class Project(models.Model):
+    class StatusChoices(models.IntegerChoices):
+        REALIZED = (0, 'Реализовано')
+        IN_PROGRESS = (1, 'разрабатывается')
+    
+    class TypeChoices(models.IntegerChoices):
+        PHOTO = (0, 'Фото')
+        VIDEO = (1, 'Видео')
+
+    photo = models.ImageField(upload_to=handle_project_photo, verbose_name='Фото')
+    title = models.CharField(max_length=256, blank=False, null=False, verbose_name='Название')
+    authors = models.ManyToManyField(Employee, blank=True, verbose_name='Авторы')
+    instruction = models.TextField(verbose_name='Инструкция')
+    description = models.TextField(verbose_name='Описание')
+    is_realized = models.BooleanField(choices=tuple(map(lambda x: (bool(x[0]), x[1]), StatusChoices.choices)), 
+                                 default=StatusChoices.REALIZED, verbose_name='Статус')
+    type = models.IntegerField(choices=TypeChoices.choices, blank=False, null=False, verbose_name='Тип')
+    slug = models.SlugField(unique=True, max_length=256, blank=True, null=True, verbose_name='Slug')
+    
+    class Meta():
+        verbose_name_plural = 'Проекты'
+        verbose_name = 'Проект'
+
+    def __str__(self) -> str:
+        return self.title
