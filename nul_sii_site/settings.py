@@ -10,7 +10,7 @@ SECRET_KEY = 'django-insecure-rp1iaj-0ck3dz5vmg%x4q%0)sv3y&fpm-6vosopi++n8x_^dr=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 #INTERNAL_IPS = []
 
@@ -30,6 +30,8 @@ INSTALLED_APPS = [
     'api_v1',
     #libs
     'rest_framework',
+    'corsheaders',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -40,7 +42,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+# CORS
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+# 
 
 ROOT_URLCONF = 'nul_sii_site.urls'
 
@@ -143,5 +152,10 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
         #'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        #убрать на проде
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
 }

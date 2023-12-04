@@ -1,8 +1,9 @@
 from django.contrib import admin, messages
+from django_summernote.admin import SummernoteModelAdmin
 from .models import *
 
 @admin.register(Project)
-class ProjectAdmin(admin.ModelAdmin):
+class ProjectAdmin(SummernoteModelAdmin):
     list_display = ['id', 'brief_title', 'is_realized', 'type', 'slug']
     list_display_links = ['id']
     list_editable = ['is_realized']
@@ -10,6 +11,7 @@ class ProjectAdmin(admin.ModelAdmin):
     actions = ['set_realized', 'set_in_progress']
     search_fields = ['title']
     list_filter = ['is_realized']
+    summernote_fields = ['instruction'] 
 
     @admin.display(description='Название')
     def brief_title(self, project: Project):

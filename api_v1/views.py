@@ -1,13 +1,19 @@
 from rest_framework import generics
+from rest_framework import viewsets
 from .serializers import *
 from .models import *
 
+
+class PorfolioAPIView(generics.RetrieveAPIView):
+    lookup_field = 'slug'
+    queryset = Project.objects.all()
+    serializer_class = PortfoloSerializer
 
 class ProjectAPIView(generics.ListAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
 
-class EmployeeAPIView(generics.ListAPIView):
+class EmployeeAPIView(viewsets.ReadOnlyModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
 
