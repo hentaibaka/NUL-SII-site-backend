@@ -1,5 +1,6 @@
 from django.db import migrations
 
+
 def add_employees(apps, schema_editor):
     Employee = apps.get_model('api_v1', 'Employee')
     e1 = Employee(photo=r'images\employees\photo_2023-09-23_10-00-48.jpg', 
@@ -35,80 +36,100 @@ def add_projects(apps, schema_editor):
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=True, 
                  type=0, 
-                 slug='tipa_slug1')
+                 slug='tipa_slug1',
+                 instruction='')
     p1.save()
+    p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
                  title='НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ КАКОЕ-НИБУДЬ ТИПА ДА', 
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=True, 
                  type=1, 
-                 slug='tipa_slug2')
+                 slug='tipa_slug2',
+                 instruction='')
     p1.save()
+    p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
                  title='НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ КАКОЕ-НИБУДЬ ТИПА ДА', 
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=True, 
                  type=0, 
-                 slug='tipa_slug3')
+                 slug='tipa_slug3',
+                 instruction='')
     p1.save()
+    p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
                  title='НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ КАКОЕ-НИБУДЬ ТИПА ДА', 
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=True, 
                  type=1, 
-                 slug='tipa_slug4')
+                 slug='tipa_slug4',
+                 instruction='')
     p1.save()
+    p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
                  title='НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ КАКОЕ-НИБУДЬ ТИПА ДА', 
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=True, 
                  type=0, 
-                 slug='tipa_slug5')
+                 slug='tipa_slug5',
+                 instruction='')
     p1.save()
+    p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
                  title='НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ КАКОЕ-НИБУДЬ ТИПА ДА', 
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=False, 
                  type=1, 
-                 slug='tipa_slug6')
+                 slug='tipa_slug6',
+                 instruction='')
     p1.save()
+    p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
                  title='НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ КАКОЕ-НИБУДЬ ТИПА ДА', 
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=False, 
                  type=0, 
-                 slug='tipa_slug7')
+                 slug='tipa_slug7',
+                 instruction='')
     p1.save()
+    p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
                  title='НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ КАКОЕ-НИБУДЬ ТИПА ДА', 
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=False, 
                  type=1, 
-                 slug='tipa_slug8')
+                 slug='tipa_slug8',
+                 instruction='')
     p1.save()
+    p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
                  title='НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ КАКОЕ-НИБУДЬ ТИПА ДА', 
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=False, 
                  type=0, 
-                 slug='tipa_slug9')
+                 slug='tipa_slug9',
+                 instruction='')
     p1.save()
+    p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
     p1 = Project(photo=r'images\projects\67943b630bde8608d8e59005be278dec.jpeg', 
                  title='НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ КАКОЕ-НИБУДЬ ТИПА ДА', 
                  description='Хочу спать, тут какой то умный текст, бурно иммитирую активную деятельность, почему с фигмы нельзя текст скопировать', 
                  is_realized=False, 
                  type=1, 
-                 slug='tipa_slug10')
+                 slug='tipa_slug10',
+                 instruction='')
     p1.save()
+    p1.authors.add(1, 2)
 
 def add_publications(apps, schema_editor):
     Publication = apps.get_model('api_v1', 'Publication')
