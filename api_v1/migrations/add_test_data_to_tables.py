@@ -37,7 +37,7 @@ def add_projects(apps, schema_editor):
                  is_realized=True, 
                  type=0, 
                  slug='tipa_slug1',
-                 instruction='')
+                 instruction='<ul><li><b>привет жирным </b><i>привет курсивом</i></li><li>просто привет <font color="#000000" style="background-color: rgb(255, 255, 0);">привет </font><font color="#000000" style="background-color: rgb(255, 255, 0);">жёлтым</font></li><li><span style="font-family: &quot;Times New Roman&quot;; font-size: 36px;">привет другим шрифтом и размером</span></li></ul><p><img src="/media/django-summernote/2023-12-05/ed32b7cb-c034-4063-af2f-cedb331bcad1.jpg" style="width: 698.857px;"><br></p><p><sub>&nbsp;</sub></p>')
     p1.save()
     p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
@@ -47,7 +47,7 @@ def add_projects(apps, schema_editor):
                  is_realized=True, 
                  type=1, 
                  slug='tipa_slug2',
-                 instruction='')
+                 instruction='<ul><li><b>привет жирным </b><i>привет курсивом</i></li><li>просто привет <font color="#000000" style="background-color: rgb(255, 255, 0);">привет </font><font color="#000000" style="background-color: rgb(255, 255, 0);">жёлтым</font></li><li><span style="font-family: &quot;Times New Roman&quot;; font-size: 36px;">привет другим шрифтом и размером</span></li></ul><p><img src="/media/django-summernote/2023-12-05/ed32b7cb-c034-4063-af2f-cedb331bcad1.jpg" style="width: 698.857px;"><br></p><p><sub>&nbsp;</sub></p>')
     p1.save()
     p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
@@ -57,7 +57,7 @@ def add_projects(apps, schema_editor):
                  is_realized=True, 
                  type=0, 
                  slug='tipa_slug3',
-                 instruction='')
+                 instruction='<ul><li><b>привет жирным </b><i>привет курсивом</i></li><li>просто привет <font color="#000000" style="background-color: rgb(255, 255, 0);">привет </font><font color="#000000" style="background-color: rgb(255, 255, 0);">жёлтым</font></li><li><span style="font-family: &quot;Times New Roman&quot;; font-size: 36px;">привет другим шрифтом и размером</span></li></ul><p><img src="/media/django-summernote/2023-12-05/ed32b7cb-c034-4063-af2f-cedb331bcad1.jpg" style="width: 698.857px;"><br></p><p><sub>&nbsp;</sub></p>')
     p1.save()
     p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
@@ -67,7 +67,7 @@ def add_projects(apps, schema_editor):
                  is_realized=True, 
                  type=1, 
                  slug='tipa_slug4',
-                 instruction='')
+                 instruction='<ul><li><b>привет жирным </b><i>привет курсивом</i></li><li>просто привет <font color="#000000" style="background-color: rgb(255, 255, 0);">привет </font><font color="#000000" style="background-color: rgb(255, 255, 0);">жёлтым</font></li><li><span style="font-family: &quot;Times New Roman&quot;; font-size: 36px;">привет другим шрифтом и размером</span></li></ul><p><img src="/media/django-summernote/2023-12-05/ed32b7cb-c034-4063-af2f-cedb331bcad1.jpg" style="width: 698.857px;"><br></p><p><sub>&nbsp;</sub></p>')
     p1.save()
     p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
@@ -77,7 +77,7 @@ def add_projects(apps, schema_editor):
                  is_realized=True, 
                  type=0, 
                  slug='tipa_slug5',
-                 instruction='')
+                 instruction='<ul><li><b>привет жирным </b><i>привет курсивом</i></li><li>просто привет <font color="#000000" style="background-color: rgb(255, 255, 0);">привет </font><font color="#000000" style="background-color: rgb(255, 255, 0);">жёлтым</font></li><li><span style="font-family: &quot;Times New Roman&quot;; font-size: 36px;">привет другим шрифтом и размером</span></li></ul><p><img src="/media/django-summernote/2023-12-05/ed32b7cb-c034-4063-af2f-cedb331bcad1.jpg" style="width: 698.857px;"><br></p><p><sub>&nbsp;</sub></p>')
     p1.save()
     p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
@@ -87,7 +87,7 @@ def add_projects(apps, schema_editor):
                  is_realized=False, 
                  type=1, 
                  slug='tipa_slug6',
-                 instruction='')
+                 instruction='<ul><li><b>привет жирным </b><i>привет курсивом</i></li><li>просто привет <font color="#000000" style="background-color: rgb(255, 255, 0);">привет </font><font color="#000000" style="background-color: rgb(255, 255, 0);">жёлтым</font></li><li><span style="font-family: &quot;Times New Roman&quot;; font-size: 36px;">привет другим шрифтом и размером</span></li></ul><p><img src="/media/django-summernote/2023-12-05/ed32b7cb-c034-4063-af2f-cedb331bcad1.jpg" style="width: 698.857px;"><br></p><p><sub>&nbsp;</sub></p>')
     p1.save()
     p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
@@ -97,7 +97,7 @@ def add_projects(apps, schema_editor):
                  is_realized=False, 
                  type=0, 
                  slug='tipa_slug7',
-                 instruction='')
+                 instruction='<ul><li><b>привет жирным </b><i>привет курсивом</i></li><li>просто привет <font color="#000000" style="background-color: rgb(255, 255, 0);">привет </font><font color="#000000" style="background-color: rgb(255, 255, 0);">жёлтым</font></li><li><span style="font-family: &quot;Times New Roman&quot;; font-size: 36px;">привет другим шрифтом и размером</span></li></ul><p><img src="/media/django-summernote/2023-12-05/ed32b7cb-c034-4063-af2f-cedb331bcad1.jpg" style="width: 698.857px;"><br></p><p><sub>&nbsp;</sub></p>')
     p1.save()
     p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
@@ -107,7 +107,7 @@ def add_projects(apps, schema_editor):
                  is_realized=False, 
                  type=1, 
                  slug='tipa_slug8',
-                 instruction='')
+                 instruction='<ul><li><b>привет жирным </b><i>привет курсивом</i></li><li>просто привет <font color="#000000" style="background-color: rgb(255, 255, 0);">привет </font><font color="#000000" style="background-color: rgb(255, 255, 0);">жёлтым</font></li><li><span style="font-family: &quot;Times New Roman&quot;; font-size: 36px;">привет другим шрифтом и размером</span></li></ul><p><img src="/media/django-summernote/2023-12-05/ed32b7cb-c034-4063-af2f-cedb331bcad1.jpg" style="width: 698.857px;"><br></p><p><sub>&nbsp;</sub></p>')
     p1.save()
     p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
@@ -117,7 +117,7 @@ def add_projects(apps, schema_editor):
                  is_realized=False, 
                  type=0, 
                  slug='tipa_slug9',
-                 instruction='')
+                 instruction='<ul><li><b>привет жирным </b><i>привет курсивом</i></li><li>просто привет <font color="#000000" style="background-color: rgb(255, 255, 0);">привет </font><font color="#000000" style="background-color: rgb(255, 255, 0);">жёлтым</font></li><li><span style="font-family: &quot;Times New Roman&quot;; font-size: 36px;">привет другим шрифтом и размером</span></li></ul><p><img src="/media/django-summernote/2023-12-05/ed32b7cb-c034-4063-af2f-cedb331bcad1.jpg" style="width: 698.857px;"><br></p><p><sub>&nbsp;</sub></p>')
     p1.save()
     p1.authors.add(1, 2)
     Project = apps.get_model('api_v1', 'Project')
@@ -127,7 +127,7 @@ def add_projects(apps, schema_editor):
                  is_realized=False, 
                  type=1, 
                  slug='tipa_slug10',
-                 instruction='')
+                 instruction='<ul><li><b>привет жирным </b><i>привет курсивом</i></li><li>просто привет <font color="#000000" style="background-color: rgb(255, 255, 0);">привет </font><font color="#000000" style="background-color: rgb(255, 255, 0);">жёлтым</font></li><li><span style="font-family: &quot;Times New Roman&quot;; font-size: 36px;">привет другим шрифтом и размером</span></li></ul><p><img src="/media/django-summernote/2023-12-05/ed32b7cb-c034-4063-af2f-cedb331bcad1.jpg" style="width: 698.857px;"><br></p><p><sub>&nbsp;</sub></p>')
     p1.save()
     p1.authors.add(1, 2)
 
