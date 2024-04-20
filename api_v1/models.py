@@ -1,5 +1,6 @@
+from random import choice, choices
 from django.db import models
-from .utils import handle_project_photo, handle_employee_photo
+from .utils import *
 
 
 class Publication(models.Model):
@@ -57,14 +58,39 @@ class Project(models.Model):
     authors = models.ManyToManyField(Employee, blank=True, verbose_name='Авторы')
     instruction = models.TextField(verbose_name='Инструкция')
     description = models.TextField(verbose_name='Описание')
-    is_realized = models.BooleanField(choices=tuple(map(lambda x: (bool(x[0]), x[1]), StatusChoices.choices)), 
-                                 default=StatusChoices.REALIZED, verbose_name='Статус')
+    is_realized = models.BooleanField(choices=tuple(map(lambda x: tuple([bool(x[0]), x[1]]), StatusChoices.choices)), default=StatusChoices.IN_PROGRESS, verbose_name='Статус') # type: ignore
     type = models.IntegerField(choices=TypeChoices.choices, blank=False, null=False, verbose_name='Тип')
     slug = models.SlugField(unique=True, max_length=256, blank=True, null=True, verbose_name='Slug')
     
     class Meta():
         verbose_name_plural = 'Проекты'
         verbose_name = 'Проект'
+
+    def __str__(self) -> str:
+        return self.title
+
+class Article(models.Model):
+    class StatusChoices(models.IntegerChoices):
+        NOT_PUBLISHED = (0, 'Черновик')
+        PUBLISHED = (1, 'опубликованно')
+
+    photo = models.ImageField(upload_to=handle_article_photo, verbose_name="Фото")
+    title = models.CharField(max_length=128, blank=False, null=False, verbose_name="Заголовок")
+    text = models.TextField(verbose_name="Содержимое")
+    date = models.DateField(auto_now_add=True, verbose_name="Дата создания")
+    slug = models.SlugField(unique=True, max_length=256, blank=False, null=False, verbose_name='Slug')
+    is_published = models.BooleanField(choices=tuple(map(lambda x: tuple([bool(x[0]), x[1]]), StatusChoices.choices)), default=StatusChoices.NOT_PUBLISHED, verbose_name='Статус') # type: ignore
+
+    @property
+    def desc(self):
+        return self.text[:50] + '...'
+    
+    def save(self, *args, **kwargs):
+        self.slug = my_slugify(self.title)
+        super().save(*args, **kwargs)
+    class Meta():
+        verbose_name_plural = 'Статьи'
+        verbose_name = 'Статья'
 
     def __str__(self) -> str:
         return self.title

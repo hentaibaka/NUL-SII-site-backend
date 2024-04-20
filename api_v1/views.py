@@ -24,3 +24,12 @@ class PublicationAPIView(generics.ListAPIView):
 class ContactAPIView(generics.CreateAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
+
+class ArticlesAPIView(generics.ListAPIView):
+    queryset = Article.objects.filter(is_published=Article.StatusChoices.PUBLISHED)
+    serializer_class = ArticleSerializer
+
+class ArticleAPIView(generics.RetrieveAPIView):
+    lookup_field = 'slug'
+    queryset = Article.objects.filter(is_published=Article.StatusChoices.PUBLISHED)
+    serializer_class = ArticleSerializer

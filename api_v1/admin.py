@@ -1,9 +1,8 @@
 from django.contrib import admin, messages
-from django_summernote.admin import SummernoteModelAdmin
 from .models import *
 
 @admin.register(Project)
-class ProjectAdmin(SummernoteModelAdmin):
+class ProjectAdmin(admin.ModelAdmin):
     list_display = ['id', 'brief_title', 'is_realized', 'type', 'slug']
     list_display_links = ['id']
     list_editable = ['is_realized']
@@ -11,7 +10,6 @@ class ProjectAdmin(SummernoteModelAdmin):
     actions = ['set_realized', 'set_in_progress']
     search_fields = ['title']
     list_filter = ['is_realized']
-    summernote_fields = ['instruction'] 
 
     @admin.display(description='Название')
     def brief_title(self, project: Project):
@@ -57,3 +55,24 @@ class ContactAdmin(admin.ModelAdmin):
     @admin.display(description='Вопрос')
     def brief_question(self, contact: Contact):
         return contact.question[:20] + '...' if len(contact.question) > 20 else contact.question
+    
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title', 'is_published', 'date', 'slug']
+    list_display_links = ['id']
+    list_editable = ['is_published']
+    ordering = ['id', 'title']
+    actions = ['set_published', 'set_not_published']
+    search_fields = ['title', 'text']
+    list_filter = ['is_published', 'date']
+    readonly_fields = ['slug']
+
+    @admin.action(description='Опубликовать')
+    def set_published(self, request, queryset):
+        count = queryset.update(is_published=Article.StatusChoices.PUBLISHED)
+        self.message_user(request, f'{count} статей опубликованно', messages.SUCCESS)
+
+    @admin.action(description='Снять с публикации')
+    def set_not_published(self, request, queryset):
+        count = queryset.update(is_published=Article.StatusChoices.NOT_PUBLISHED)
+        self.message_user(request, f'{count} статей снято с публикации', messages.WARNING)

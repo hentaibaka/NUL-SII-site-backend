@@ -22,7 +22,6 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('api_v1.urls')),
-    path('summernote/', include('django_summernote.urls')),
 ]
 
 if settings.DEBUG:
