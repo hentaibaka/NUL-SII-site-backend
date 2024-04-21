@@ -1,5 +1,7 @@
 from django.contrib import admin, messages
+from django.contrib.auth.models import Group, User
 from .models import *
+
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
@@ -58,7 +60,7 @@ class ContactAdmin(admin.ModelAdmin):
     
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'is_published', 'date', 'slug']
+    list_display = ['id', 'brief_title', 'is_published', 'date', 'slug']
     list_display_links = ['id']
     list_editable = ['is_published']
     ordering = ['id', 'title']
@@ -66,6 +68,10 @@ class ArticleAdmin(admin.ModelAdmin):
     search_fields = ['title', 'text']
     list_filter = ['is_published', 'date']
     readonly_fields = ['slug']
+
+    @admin.display(description='Название')
+    def brief_title(self, project: Project):
+        return project.title[:20] + '...' if len(project.title) > 20 else project.title
 
     @admin.action(description='Опубликовать')
     def set_published(self, request, queryset):
@@ -76,3 +82,6 @@ class ArticleAdmin(admin.ModelAdmin):
     def set_not_published(self, request, queryset):
         count = queryset.update(is_published=Article.StatusChoices.NOT_PUBLISHED)
         self.message_user(request, f'{count} статей снято с публикации', messages.WARNING)
+
+admin.site.site_header = "Лаборатория искуственного интеллекта ИКИТ СФУ"
+admin.site.index_title = "Админ панель"
