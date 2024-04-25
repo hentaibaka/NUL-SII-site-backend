@@ -1,16 +1,14 @@
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-rp1iaj-0ck3dz5vmg%x4q%0)sv3y&fpm-6vosopi++n8x_^dr='
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['10.3.3.147', # внешний ip
+                 '127.0.0.1']
 
 #INTERNAL_IPS = []
 
@@ -31,11 +29,11 @@ INSTALLED_APPS = [
     #libs
     'rest_framework',
     'corsheaders',
-    'django_summernote',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -70,6 +68,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'nul_sii_site.wsgi.application'
+ASGI_APPLICATION = 'nul_sii_site.asgi.application'
 
 
 # Database
@@ -118,12 +117,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
-
-STATIC_ROOT = '/static/'
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

@@ -17,3 +17,8 @@ def handle_employee_photo(instance, filename: str):
                                f' {instance.patronymic}' if instance.patronymic else '')
     filename = f'{employee_slug}.{filename.split(".")[1]}'
     return f'images/employees/{filename}'
+
+def handle_article_photo(instance, filename: str):
+    article_slug = my_slugify(instance.title)
+    filename = f'{article_slug}.{filename.split(".")[1]}'
+    return f'images/articles/{filename}'

@@ -8,4 +8,6 @@ urlpatterns = [
     path('get-employees/<int:pk>', (EmployeeAPIView.as_view({'get': 'retrieve'})), name='getemployee'),
     path('get-publications/', (PublicationAPIView.as_view()), name='getpublications'),
     path('create-contact/', (ContactAPIView.as_view()), name='createcontact'),
+    path('get-articles/', (ArticlesAPIView.as_view()), name='getarticles'),
+    path('get-articles/<slug:slug>', (ArticleAPIView.as_view()), name='getarticle')
 ]

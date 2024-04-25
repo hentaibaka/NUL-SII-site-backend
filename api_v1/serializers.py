@@ -1,3 +1,4 @@
+from dataclasses import fields
 from rest_framework import serializers
 from .models import *
  
@@ -28,3 +29,7 @@ class PortfoloSerializer(serializers.ModelSerializer):
         model = Project
         fields = ('photo', 'title', 'authors', 'description', 'instruction', 'is_realized', 'type', 'slug')
  
+class ArticleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Article
+        fields = ('title', 'desc', 'text', 'slug', 'date', 'photo')
