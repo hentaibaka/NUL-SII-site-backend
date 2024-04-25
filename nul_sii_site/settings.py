@@ -5,9 +5,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-rp1iaj-0ck3dz5vmg%x4q%0)sv3y&fpm-6vosopi++n8x_^dr='
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['10.3.3.147', # внешний ip
+                 '127.0.0.1']
 
 #INTERNAL_IPS = []
 
