@@ -1,0 +1,13 @@
+[Unit]
+Description=backend uvicorn daemon
+After=network.target
+
+[Service]
+User=siiuser
+Group=siiuser
+WorkingDirectory= /home/siiuser/NUL-SII-site-backend
+ExecStart= /home/siiuser/NUL-SII-site-backend/siibackend.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
