@@ -46,8 +46,8 @@ class Contact(models.Model):
 
 class Project(models.Model):
     class StatusChoices(models.IntegerChoices):
-        REALIZED = (0, 'Реализовано')
-        IN_PROGRESS = (1, 'разрабатывается')
+        REALIZED = (1, 'Реализовано')
+        IN_PROGRESS = (0, 'разрабатывается')
     
     class TypeChoices(models.IntegerChoices):
         PHOTO = (0, 'Фото')

@@ -7,6 +7,8 @@ SECRET_KEY = 'django-insecure-rp1iaj-0ck3dz5vmg%x4q%0)sv3y&fpm-6vosopi++n8x_^dr=
 
 DEBUG = False
 
+CSRF_TRUSTED_ORIGINS = ["http://10.3.3.147"]
+
 ALLOWED_HOSTS = ['10.3.3.147', # внешний ip
                  '127.0.0.1']
 
@@ -159,6 +161,6 @@ REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
         #убрать на проде
-        'rest_framework.renderers.BrowsableAPIRenderer',
+        #'rest_framework.renderers.BrowsableAPIRenderer',
     ],
 }
